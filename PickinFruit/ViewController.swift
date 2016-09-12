@@ -43,37 +43,53 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         
         
-        if column1 == column2 && column2 == column3 && column1 == column3 {
+        if column1 == column2 && column2 == column3 {
             resultLabel.text = "WINNER!"
-            resultLabel.hidden = false
-            self.blinkLabel()
+            //resultLabel.hidden = false
+            //            self.blinkLabel()
             print("i'm winning")
         } else {
             
             resultLabel.text = "TRY AGAIN"
-            resultLabel.hidden = false
-            self.blinkLabel()
+            // resultLabel.hidden = false
+            //            self.blinkLabel()
             print("i need to try again")
         }
+        blinkLabel()
+//         could also do the below prior to if statement
+//        let randomRowOne = Int(arc4random_uniform(UInt32(fruitsArray.count)))
+//        let randomRowTwo = Int(arc4random_uniform(UInt32(fruitsArray.count)))
+//        let randomRowThree = Int(arc4random_uniform(UInt32(fruitsArray.count)))
+//        
+//        fruitPicker.selectRow(randomRowOne, inComponent:0, animated:true)
+//        fruitPicker.selectRow(randomRowTwo, inComponent:1, animated:true)
+//        fruitPicker.selectRow(randomRowThree, inComponent:2, animated:true)
+//        
+//        let fruitOne = fruitsArray[fruitPicker.selectedRowInComponent(0)]
+//        let fruitTwo = fruitsArray[fruitPicker.selectedRowInComponent(1)]
+//        let fruitThree = fruitsArray[fruitPicker.selectedRowInComponent(2)]
     }
     
     
     func blinkLabel(){
         
-        UIView.animateWithDuration(0.3, delay: 0, options: [.Repeat, .Autoreverse], animations: {
+        UIView.animateWithDuration(0.3, delay: 0, options: [.Repeat], animations: {
             UIView.setAnimationRepeatCount(3.0)
-            self.resultLabel.hidden = true
             self.resultLabel.hidden = false
+            // self.resultLabel.hidden = false
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             if isFinished == true {
                 
                 self.resultLabel.hidden = true
-                
-                //check status before setting label to hidden true
             }
+            //check status before setting label to hidden true
+            //            } else {
+            //                self.resultLabel.hidden = false
+            //
+            //            }
         }
-    
+        
         
     }
     
