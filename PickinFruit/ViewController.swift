@@ -75,22 +75,40 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         UIView.animateWithDuration(0.3, delay: 0, options: [.Repeat], animations: {
             UIView.setAnimationRepeatCount(3.0)
-            self.resultLabel.hidden = false
-            // self.resultLabel.hidden = false
+            self.resultLabel.hidden = false 
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             if isFinished == true {
                 
                 self.resultLabel.hidden = true
             }
-            //check status before setting label to hidden true
-            //            } else {
-            //                self.resultLabel.hidden = false
-            //
-            //            }
+            
         }
         
-        
+//            
+//        -    func animateResultsLabelWith(text: String) {
+//            -
+//                -        self.resultLabel.text = text
+//                -
+//                -        UIView.animateWithDuration(0.2, delay: 0.3, options: .CurveEaseIn, animations: {
+//                -
+//                -            self.resultLabel.alpha = 1
+//                -
+//                -        }) { _ in
+//                -
+//                -            UIView.animateWithDuration(0.25, delay: 0, options: [.Autoreverse, .Repeat], animations: {
+//                -                UIView.setAnimationRepeatCount(2.5)
+//                -
+//                -                self.resultLabel.alpha = 0
+//                -                
+//                -                }, completion: { _ in
+//                -                    
+//                -                    self.spinButton.userInteractionEnabled = true
+//                -            })
+//                -            
+//                -        }
+//            -    }
+//        
     }
     
     
